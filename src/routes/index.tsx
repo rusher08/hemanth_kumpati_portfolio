@@ -684,8 +684,8 @@ function Contact() {
       <div className="mx-auto max-w-5xl">
         <SectionTitle kicker="contact" title="Establish Connection" />
         <div className="grid gap-8 md:grid-cols-5">
-          <Reveal>
-            <div className="glass-panel h-full space-y-5 p-7 md:col-span-2">
+          <Reveal className="md:col-span-2">
+            <div className="glass-panel h-full space-y-5 p-7">
               <h3 className="font-mono text-sm uppercase tracking-widest text-cyan-glow">
                 $ ./contact --info
               </h3>
@@ -726,7 +726,7 @@ function Contact() {
             </div>
           </Reveal>
 
-          <Reveal delay={0.1}>
+          <Reveal delay={0.1} className="md:col-span-3">
             <form
               onSubmit={(e) => {
                 e.preventDefault();
@@ -737,7 +737,7 @@ function Contact() {
                 );
                 window.location.href = `mailto:kumpatihemanth8@gmail.com?subject=${subject}&body=${body}`;
               }}
-              className="glass-panel space-y-4 p-7 md:col-span-3"
+              className="glass-panel space-y-4 p-7"
             >
               <Field name="name" label="Name" placeholder="Jane Doe" />
               <Field
