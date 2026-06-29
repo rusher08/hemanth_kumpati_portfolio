@@ -483,43 +483,104 @@ function Projects() {
   );
 }
 
+const EXPERIENCES = [
+  {
+    role: "Cybersecurity Analyst",
+    context: "Self-Directed Security Research & Labs",
+    date: "2024 – 2025",
+    bullets: [
+      "Conducted vulnerability assessments and penetration testing using Nmap, Nessus, and Metasploit",
+      "Monitored network traffic with Wireshark to detect suspicious activity and data exfiltration",
+      "Investigated phishing campaigns using VirusTotal API, IP metadata analysis, and URL redirection tracing",
+      "Developed Python automation scripts for phishing detection and automated security reporting",
+      "Performed digital forensic investigations on E01 disk images using Autopsy and Sleuth Kit",
+      "Assisted in incident response including log analysis, artifact correlation, and evidence collection",
+    ],
+  },
+  {
+    role: "Wazuh SIEM Engineer",
+    context: "Security Operations Lab",
+    date: "2024",
+    bullets: [
+      "Deployed Wazuh SIEM in a virtualized lab environment and onboarded multiple endpoints via Wazuh agents",
+      "Configured agent policies for centralized log collection and real-time security event monitoring",
+      "Authored custom detection rules targeting brute-force attempts, privilege escalation, and suspicious process execution",
+      "Investigated triggered alerts end-to-end — correlating events across agents, identifying root cause, and documenting incident timelines",
+    ],
+  },
+  {
+    role: "Splunk Analyst",
+    context: "Threat Hunting Lab",
+    date: "2024",
+    bullets: [
+      "Ingested and indexed security logs from multiple sources to build a centralized event visibility layer",
+      "Designed interactive dashboards and visualizations surfacing key security metrics, anomalies, and attack patterns",
+      "Wrote SPL (Search Processing Language) queries to extract actionable threat intelligence from raw log data",
+      "Conducted proactive threat hunting sessions to identify indicators of compromise across the simulated environment",
+    ],
+  },
+  {
+    role: "Snort IDS/IPS Engineer",
+    context: "Network Security Lab",
+    date: "2024 – 2025",
+    bullets: [
+      "Deployed Snort as both an Intrusion Detection System and Intrusion Prevention System in a controlled network",
+      "Authored custom Snort rules to detect port scans, SQL injection attempts, and malicious payload signatures",
+      "Captured and analyzed PCAP traffic files to validate rule effectiveness and fine-tune detection logic",
+      "Identified real attack patterns in captured traffic, bridging rule engineering with live network analysis",
+    ],
+  },
+];
+
 function Experience() {
-  const bullets = [
-    "Conducted vulnerability assessments using Nessus, OpenVAS, and Nmap across simulated enterprise networks.",
-    "Built a Python-based phishing detection tool with VirusTotal API integration and automated SOC reporting.",
-    "Performed DFIR on E01 disk images using Autopsy and Sleuth Kit to recover artifacts and timelines.",
-    "Completed 16 TryHackMe rooms covering SOC L1, pentesting, and CVE-2025-49113 exploitation.",
-    "Practiced offensive techniques on Hack The Box machines, reaching Level 6 (261 XP).",
-  ];
   return (
     <section id="experience" className="relative px-4 py-28">
       <div className="mx-auto max-w-4xl">
         <SectionTitle kicker="experience" title="Journey & Hands-On Labs" />
-        <Reveal>
-          <div className="relative pl-8">
-            <div className="absolute left-2 top-2 h-full w-px bg-gradient-to-b from-[#00f5ff] via-[#7b2fff] to-transparent shadow-[0_0_12px_rgba(0,245,255,0.6)]" />
-            <div className="absolute left-0 top-2 h-4 w-4 rounded-full border border-[#00f5ff] bg-background shadow-[0_0_18px_rgba(0,245,255,0.8)]" />
-            <div className="glass-panel glass-hover p-6">
-              <div className="flex flex-wrap items-baseline justify-between gap-2">
-                <h3 className="text-lg font-semibold text-foreground">
-                  Cybersecurity Analyst
-                </h3>
-                <span className="font-mono text-xs text-cyan-glow">2024 — 2025</span>
-              </div>
-              <p className="mt-1 text-sm text-muted-foreground">
-                Self-Directed Security Research & Labs
-              </p>
-              <ul className="mt-5 space-y-3 font-mono text-sm">
-                {bullets.map((b) => (
-                  <li key={b} className="flex gap-3">
-                    <span className="text-neon-green">{">"}</span>
-                    <span className="text-foreground/90">{b}</span>
-                  </li>
-                ))}
-              </ul>
-            </div>
+        <div className="relative">
+          {/* Pulsing vertical timeline line */}
+          <div className="absolute left-[15px] top-0 hidden h-full w-px md:block">
+            <div className="h-full w-full bg-gradient-to-b from-[#00f5ff] via-[#00f5ff]/60 to-transparent timeline-pulse" />
           </div>
-        </Reveal>
+
+          <div className="space-y-12">
+            {EXPERIENCES.map((exp, i) => (
+              <motion.div
+                key={exp.role}
+                initial={{ opacity: 0, x: -60 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true, margin: "-80px" }}
+                transition={{ duration: 0.6, delay: i * 0.1, ease: "easeOut" }}
+                className="relative md:pl-12"
+              >
+                {/* Timeline node dot */}
+                <div className="absolute left-0 top-3 hidden h-4 w-4 rounded-full border-2 border-[#00f5ff] bg-[#0a0f1a] shadow-[0_0_18px_rgba(0,245,255,0.8)] md:block" />
+
+                <div className="glass-panel glass-hover p-6 md:p-7">
+                  <div className="flex flex-wrap items-baseline justify-between gap-3">
+                    <h3 className="text-lg font-semibold text-cyan-glow md:text-xl">
+                      {exp.role}
+                    </h3>
+                    <span className="inline-flex items-center rounded-full border border-[#7b2fff]/40 bg-[#7b2fff]/10 px-3 py-1 font-mono text-xs text-[#c9a8ff] shadow-[0_0_14px_rgba(123,47,255,0.3)]">
+                      {exp.date}
+                    </span>
+                  </div>
+                  <p className="mt-1 text-sm text-muted-foreground">
+                    {exp.context}
+                  </p>
+                  <ul className="mt-5 space-y-2.5 font-mono text-sm">
+                    {exp.bullets.map((b, bi) => (
+                      <li key={bi} className="flex items-start gap-3">
+                        <span className="mt-0.5 shrink-0 text-neon-green">{">"}</span>
+                        <span className="text-foreground/90">{b}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              </motion.div>
+            ))}
+          </div>
+        </div>
       </div>
     </section>
   );
