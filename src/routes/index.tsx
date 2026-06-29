@@ -390,7 +390,7 @@ function TerminalCard() {
   const lines = [
     { k: "tryhackme.rank", v: "Top 30% Global" },
     { k: "htb.level", v: "Level 6 · 261 XP" },
-    { k: "projects.major", v: "3" },
+    { k: "projects.major", v: "6" },
     { k: "status", v: "available_for_hire" },
   ];
   return (
