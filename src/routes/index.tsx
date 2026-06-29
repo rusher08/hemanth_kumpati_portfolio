@@ -76,7 +76,15 @@ function useTypewriter(words: string[]) {
   return text;
 }
 
-function Reveal({ children, delay = 0, className }: { children: ReactNode; delay?: number; className?: string }) {
+function Reveal({
+  children,
+  delay = 0,
+  className,
+}: {
+  children: ReactNode;
+  delay?: number;
+  className?: string;
+}) {
   return (
     <motion.div
       initial={{ opacity: 0, y: 24 }}
@@ -94,12 +102,8 @@ function SectionTitle({ kicker, title }: { kicker: string; title: string }) {
   return (
     <Reveal>
       <div className="mb-12 text-center">
-        <p className="font-mono text-xs uppercase tracking-[0.4em] text-cyan-glow">
-          // {kicker}
-        </p>
-        <h2 className="mt-3 text-3xl font-bold text-foreground sm:text-4xl md:text-5xl">
-          {title}
-        </h2>
+        <p className="font-mono text-xs uppercase tracking-[0.4em] text-cyan-glow">// {kicker}</p>
+        <h2 className="mt-3 text-3xl font-bold text-foreground sm:text-4xl md:text-5xl">{title}</h2>
         <div className="mx-auto mt-4 h-px w-24 bg-gradient-to-r from-transparent via-[#00f5ff] to-transparent" />
       </div>
     </Reveal>
@@ -115,7 +119,14 @@ const SKILL_GROUPS = [
   {
     icon: Sword,
     title: "Offensive Security",
-    items: ["Penetration Testing", "OWASP Top 10", "SQL Injection", "XSS", "Burp Suite", "Metasploit"],
+    items: [
+      "Penetration Testing",
+      "OWASP Top 10",
+      "SQL Injection",
+      "XSS",
+      "Burp Suite",
+      "Metasploit",
+    ],
   },
   {
     icon: Search,
@@ -362,11 +373,11 @@ function About() {
             <div className="glass-panel glass-hover h-full p-8">
               <p className="text-base leading-relaxed text-foreground/90">
                 Cybersecurity Analyst with hands-on experience in{" "}
-                <span className="text-cyan-glow">Security Operations</span>,
-                vulnerability assessment, and digital forensics. Skilled in monitoring
-                network traffic, detecting malicious activity, and investigating security
-                incidents. Passionate about protecting enterprise systems and supporting
-                SOC operations through proactive threat detection.
+                <span className="text-cyan-glow">Security Operations</span>, vulnerability
+                assessment, and digital forensics. Skilled in monitoring network traffic, detecting
+                malicious activity, and investigating security incidents. Passionate about
+                protecting enterprise systems and supporting SOC operations through proactive threat
+                detection.
               </p>
               <div className="mt-6 flex flex-wrap gap-2">
                 {["SOC L1", "DFIR", "Pentesting", "Threat Hunting"].map((t) => (
@@ -464,9 +475,7 @@ function Projects() {
                   <h3 className="text-lg font-semibold text-cyan-glow">{p.title}</h3>
                   <ExternalLink className="h-4 w-4 shrink-0 text-muted-foreground transition group-hover:text-[#00f5ff]" />
                 </div>
-                <p className="mt-4 text-sm leading-relaxed text-muted-foreground">
-                  {p.desc}
-                </p>
+                <p className="mt-4 text-sm leading-relaxed text-muted-foreground">{p.desc}</p>
                 <div className="mt-5 flex flex-wrap gap-2">
                   {p.tags.map((t) => (
                     <span key={t} className="pill-badge">
@@ -558,16 +567,12 @@ function Experience() {
 
                 <div className="glass-panel glass-hover p-6 md:p-7">
                   <div className="flex flex-wrap items-baseline justify-between gap-3">
-                    <h3 className="text-lg font-semibold text-cyan-glow md:text-xl">
-                      {exp.role}
-                    </h3>
+                    <h3 className="text-lg font-semibold text-cyan-glow md:text-xl">{exp.role}</h3>
                     <span className="inline-flex items-center rounded-full border border-[#7b2fff]/40 bg-[#7b2fff]/10 px-3 py-1 font-mono text-xs text-[#c9a8ff] shadow-[0_0_14px_rgba(123,47,255,0.3)]">
                       {exp.date}
                     </span>
                   </div>
-                  <p className="mt-1 text-sm text-muted-foreground">
-                    {exp.context}
-                  </p>
+                  <p className="mt-1 text-sm text-muted-foreground">{exp.context}</p>
                   <ul className="mt-5 space-y-2.5 font-mono text-sm">
                     {exp.bullets.map((b, bi) => (
                       <li key={bi} className="flex items-start gap-3">
@@ -740,12 +745,7 @@ function Contact() {
               className="glass-panel space-y-4 p-7"
             >
               <Field name="name" label="Name" placeholder="Jane Doe" />
-              <Field
-                name="email"
-                label="Email"
-                type="email"
-                placeholder="jane@company.com"
-              />
+              <Field name="email" label="Email" type="email" placeholder="jane@company.com" />
               <div>
                 <label className="mb-1.5 block font-mono text-xs uppercase tracking-widest text-muted-foreground">
                   Message
@@ -803,10 +803,8 @@ function Footer() {
   return (
     <footer className="border-t border-white/5 px-4 py-8 text-center">
       <p className="font-mono text-xs text-muted-foreground">
-        Built with{" "}
-        <span className="text-[#00f5ff]">{"<coffee/>"}</span> &{" "}
-        <span className="text-neon-green">cybersecurity_passion</span> © Kumpati
-        Hemanth
+        Built with <span className="text-[#00f5ff]">{"<coffee/>"}</span> &{" "}
+        <span className="text-neon-green">cybersecurity_passion</span> © Kumpati Hemanth
       </p>
     </footer>
   );
