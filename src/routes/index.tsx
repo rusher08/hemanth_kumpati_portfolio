@@ -805,8 +805,8 @@ function Footer() {
       <p className="font-mono text-xs text-muted-foreground">
         Built with{" "}
         <span className="text-[#00f5ff]">{"<coffee/>"}</span> &{" "}
-        <span className="text-neon-green">cybersecurity_passion</span> — Kumpati Hemanth ©
-        2025
+        <span className="text-neon-green">cybersecurity_passion</span> © Kumpati
+        Hemanth
       </p>
     </footer>
   );
