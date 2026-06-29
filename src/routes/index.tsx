@@ -76,13 +76,14 @@ function useTypewriter(words: string[]) {
   return text;
 }
 
-function Reveal({ children, delay = 0 }: { children: ReactNode; delay?: number }) {
+function Reveal({ children, delay = 0, className }: { children: ReactNode; delay?: number; className?: string }) {
   return (
     <motion.div
       initial={{ opacity: 0, y: 24 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, margin: "-80px" }}
       transition={{ duration: 0.6, delay, ease: "easeOut" }}
+      className={className}
     >
       {children}
     </motion.div>
@@ -342,8 +343,8 @@ function About() {
       <div className="mx-auto max-w-6xl">
         <SectionTitle kicker="about" title="Whoami" />
         <div className="grid gap-8 md:grid-cols-5">
-          <Reveal>
-            <div className="glass-panel glass-hover h-full p-8 md:col-span-3">
+          <Reveal className="md:col-span-3">
+            <div className="glass-panel glass-hover h-full p-8">
               <p className="text-base leading-relaxed text-foreground/90">
                 Cybersecurity Analyst with hands-on experience in{" "}
                 <span className="text-cyan-glow">Security Operations</span>,
@@ -361,10 +362,8 @@ function About() {
               </div>
             </div>
           </Reveal>
-          <Reveal delay={0.15}>
-            <div className="md:col-span-2">
-              <TerminalCard />
-            </div>
+          <Reveal delay={0.15} className="md:col-span-2">
+            <TerminalCard />
           </Reveal>
         </div>
       </div>
