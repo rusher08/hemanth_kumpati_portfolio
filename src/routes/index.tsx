@@ -615,28 +615,28 @@ function Contact() {
                 $ ./contact --info
               </h3>
               <ul className="space-y-4 text-sm">
-                <li className="flex items-center gap-3">
-                  <Mail className="h-4 w-4 text-[#00f5ff]" />
+                <li className="flex items-start gap-3">
+                  <Mail className="mt-0.5 h-4 w-4 shrink-0 text-[#00f5ff]" />
                   <a
                     href="mailto:kumpatihemanth8@gmail.com"
-                    className="text-foreground/90 hover:text-[#00f5ff]"
+                    className="min-w-0 break-all text-foreground/90 hover:text-[#00f5ff]"
                   >
                     kumpatihemanth8@gmail.com
                   </a>
                 </li>
-                <li className="flex items-center gap-3">
-                  <Phone className="h-4 w-4 text-[#00f5ff]" />
-                  <span className="text-foreground/90">+91 9666942506</span>
+                <li className="flex items-start gap-3">
+                  <Phone className="mt-0.5 h-4 w-4 shrink-0 text-[#00f5ff]" />
+                  <span className="min-w-0 text-foreground/90">+91 9666942506</span>
                 </li>
-                <li className="flex items-center gap-3">
-                  <Linkedin className="h-4 w-4 text-[#00f5ff]" />
+                <li className="flex items-start gap-3">
+                  <Linkedin className="mt-0.5 h-4 w-4 shrink-0 text-[#00f5ff]" />
                   <a
                     href="https://www.linkedin.com/in/hemanth-kumpati/"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-foreground/90 hover:text-[#00f5ff]"
+                    className="min-w-0 break-all text-foreground/90 hover:text-[#00f5ff]"
                   >
-                    hemanth-kumpati
+                    linkedin.com/in/hemanth-kumpati
                   </a>
                 </li>
               </ul>
