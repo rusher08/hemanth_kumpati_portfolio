@@ -342,8 +342,8 @@ function About() {
       <div className="mx-auto max-w-6xl">
         <SectionTitle kicker="about" title="Whoami" />
         <div className="grid gap-8 md:grid-cols-5">
-          <Reveal>
-            <div className="glass-panel glass-hover h-full p-8 md:col-span-3">
+          <Reveal className="md:col-span-3">
+            <div className="glass-panel glass-hover h-full p-8">
               <p className="text-base leading-relaxed text-foreground/90">
                 Cybersecurity Analyst with hands-on experience in{" "}
                 <span className="text-cyan-glow">Security Operations</span>,
@@ -361,10 +361,8 @@ function About() {
               </div>
             </div>
           </Reveal>
-          <Reveal delay={0.15}>
-            <div className="md:col-span-2">
-              <TerminalCard />
-            </div>
+          <Reveal delay={0.15} className="md:col-span-2">
+            <TerminalCard />
           </Reveal>
         </div>
       </div>
