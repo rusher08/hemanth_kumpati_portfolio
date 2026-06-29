@@ -252,3 +252,12 @@
 }
 
 .pulse-glow { animation: pulse-glow 2.4s ease-in-out infinite; }
+
+@keyframes timeline-pulse {
+  0%, 100% { opacity: 0.6; box-shadow: 0 0 6px rgba(0, 245, 255, 0.3); }
+  50% { opacity: 1; box-shadow: 0 0 18px rgba(0, 245, 255, 0.7); }
+}
+
+.timeline-pulse {
+  animation: timeline-pulse 3s ease-in-out infinite;
+}
