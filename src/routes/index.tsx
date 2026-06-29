@@ -160,6 +160,21 @@ const PROJECTS = [
     desc: "Python tool to evaluate credential strength using MD5/SHA-512. Implemented brute-force and dictionary attack simulations via John the Ripper with real-time progress tracking and cracking time estimation.",
     tags: ["Python", "John the Ripper", "MD5", "SHA-512"],
   },
+  {
+    title: "Wazuh SIEM — Security Operations & Threat Detection",
+    desc: "Deployed Wazuh SIEM with multi-endpoint agent configuration. Built custom detection rules for brute-force, privilege escalation, and suspicious processes. Investigated and documented incidents end-to-end.",
+    tags: ["Wazuh", "SIEM", "Custom Rules", "Incident Response"],
+  },
+  {
+    title: "Splunk — Log Analysis & Threat Hunting",
+    desc: "Centralized log ingestion from multiple sources, built security dashboards and SPL queries for threat hunting and IOC identification across the environment.",
+    tags: ["Splunk", "SPL", "Dashboards", "Threat Hunting"],
+  },
+  {
+    title: "Snort IDS/IPS — Intrusion Detection & Rule Engineering",
+    desc: "Deployed Snort as IDS/IPS, authored custom rules to detect port scans, SQLi, and malicious payloads. Validated rules against live PCAP traffic analysis.",
+    tags: ["Snort", "IDS/IPS", "Custom Rules", "PCAP Analysis"],
+  },
 ];
 
 function Index() {
@@ -375,7 +390,7 @@ function TerminalCard() {
   const lines = [
     { k: "tryhackme.rank", v: "Top 30% Global" },
     { k: "htb.level", v: "Level 6 · 261 XP" },
-    { k: "projects.major", v: "3" },
+    { k: "projects.major", v: "6" },
     { k: "status", v: "available_for_hire" },
   ];
   return (
