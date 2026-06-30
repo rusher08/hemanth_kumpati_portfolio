@@ -222,9 +222,23 @@ function NavBar() {
     ["Certs", "#certifications"],
     ["Contact", "#contact"],
   ] as const;
+  const [open, setOpen] = useState(false);
+  useEffect(() => {
+    if (!open) return;
+    const onClick = (e: MouseEvent) => {
+      const t = e.target as HTMLElement;
+      if (!t.closest("[data-mobile-nav]")) setOpen(false);
+    };
+    document.addEventListener("click", onClick);
+    return () => document.removeEventListener("click", onClick);
+  }, [open]);
   return (
     <header className="fixed inset-x-0 top-0 z-50 flex justify-center px-4 pt-4">
-      <nav className="glass-panel flex w-full max-w-5xl items-center justify-between px-5 py-3">
+      <nav
+        data-mobile-nav
+        className="glass-panel relative w-full max-w-5xl px-5 py-3"
+      >
+        <div className="flex items-center justify-between gap-3">
         <a href="#home" className="font-mono text-sm font-bold text-cyan-glow">
           {"<KH/>"}
         </a>
@@ -237,12 +251,54 @@ function NavBar() {
             </li>
           ))}
         </ul>
-        <a
-          href="#contact"
-          className="rounded-full border border-[#00f5ff]/40 px-4 py-1.5 text-xs font-semibold text-[#00f5ff] transition hover:bg-[#00f5ff]/10 hover:shadow-[0_0_20px_rgba(0,245,255,0.5)]"
-        >
-          Hire Me
-        </a>
+          <div className="flex items-center gap-2">
+            <a
+              href="#contact"
+              className="hidden rounded-full border border-[#00f5ff]/40 px-4 py-1.5 text-xs font-semibold text-[#00f5ff] transition hover:bg-[#00f5ff]/10 hover:shadow-[0_0_20px_rgba(0,245,255,0.5)] md:inline-block"
+            >
+              Hire Me
+            </a>
+            <button
+              type="button"
+              aria-label="Toggle navigation menu"
+              aria-expanded={open}
+              onClick={() => setOpen((v) => !v)}
+              className="grid h-9 w-9 place-items-center rounded-lg border border-white/10 bg-white/5 text-[#00f5ff] transition hover:border-[#00f5ff]/60 hover:shadow-[0_0_14px_rgba(0,245,255,0.45)] md:hidden"
+            >
+              {open ? <X className="h-4 w-4" /> : <Menu className="h-4 w-4" />}
+            </button>
+          </div>
+        </div>
+
+        {open && (
+          <motion.ul
+            initial={{ opacity: 0, y: -8 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.18 }}
+            className="glass-panel mt-3 flex flex-col gap-1 p-2 text-xs font-medium uppercase tracking-wider text-muted-foreground md:hidden"
+          >
+            {links.map(([label, href]) => (
+              <li key={href}>
+                <a
+                  href={href}
+                  onClick={() => setOpen(false)}
+                  className="block rounded-md px-3 py-2 transition-colors hover:bg-white/5 hover:text-[#00f5ff]"
+                >
+                  {label}
+                </a>
+              </li>
+            ))}
+            <li>
+              <a
+                href="#contact"
+                onClick={() => setOpen(false)}
+                className="mt-1 block rounded-md border border-[#00f5ff]/40 px-3 py-2 text-center font-semibold text-[#00f5ff] hover:bg-[#00f5ff]/10"
+              >
+                Hire Me
+              </a>
+            </li>
+          </motion.ul>
+        )}
       </nav>
     </header>
   );
