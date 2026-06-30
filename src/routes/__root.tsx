@@ -1,4 +1,5 @@
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
+import { Analytics } from "@vercel/analytics/react";
 import {
   Outlet,
   Link,
@@ -8,7 +9,7 @@ import {
   Scripts,
 } from "@tanstack/react-router";
 import { useEffect, type ReactNode } from "react";
-import { SpeedInsights } from "@vercel/speed-insights/react";
+import { Analytics } from "@vercel/analytics/react";
 
 import appCss from "../styles.css?url";
 import { reportLovableError } from "../lib/lovable-error-reporting";
@@ -78,38 +79,17 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Lovable App" },
-      {
-        name: "description",
-        content:
-          "A cybersecurity portfolio showcasing Kumpati Hemanth's expertise, projects, and skills with a modern, animated UI.",
-      },
-      { name: "author", content: "Lovable" },
-      { property: "og:title", content: "Lovable App" },
-      {
-        property: "og:description",
-        content:
-          "A cybersecurity portfolio showcasing Kumpati Hemanth's expertise, projects, and skills with a modern, animated UI.",
-      },
+      { title: "Kumpati Hemanth — Cybersecurity Analyst" },
+      { name: "description", content: "A cybersecurity portfolio showcasing Kumpati Hemanth's expertise, projects, and skills with a modern, animated UI." },
+      { name: "author", content: "Kumpati Hemanth" },
+      { property: "og:title", content: "Kumpati Hemanth" },
+      { property: "og:description", content: "A cybersecurity portfolio showcasing Kumpati Hemanth's expertise, projects, and skills with a modern, animated UI." },
       { property: "og:type", content: "website" },
-      { name: "twitter:card", content: "summary" },
-      { name: "twitter:site", content: "@Lovable" },
-      { name: "twitter:title", content: "Lovable App" },
-      {
-        name: "twitter:description",
-        content:
-          "A cybersecurity portfolio showcasing Kumpati Hemanth's expertise, projects, and skills with a modern, animated UI.",
-      },
-      {
-        property: "og:image",
-        content:
-          "https://storage.googleapis.com/gpt-engineer-file-uploads/8HFo3DWVEnawPjHz9Wrfuap01uJ3/social-images/social-1782721283859-Hemanth_.webp",
-      },
-      {
-        name: "twitter:image",
-        content:
-          "https://storage.googleapis.com/gpt-engineer-file-uploads/8HFo3DWVEnawPjHz9Wrfuap01uJ3/social-images/social-1782721283859-Hemanth_.webp",
-      },
+      { name: "twitter:card", content: "summary_large_image" },
+      { name: "twitter:title", content: "Kumpati Hemanth — Cybersecurity Analyst" },
+      { name: "twitter:descripti0n", content: "A cybersecurity portfolio showcasing Kumpati Hemanth's expertise, projects, and skills with a modern, animated UI." },
+      { property: "og:image", content: "https://placehold.co/1200x630/020b18/00f5ff?text=Kumpati+Hemanth+%7C+Cybersecurity+Analyst" },
+      { name: "twitter:image", content: "https://placehold.co/1200x630/020b18/00f5ff?text=Kumpati+Hemanth+%7C+Cybersecurity+Analyst" },
     ],
     links: [
       {
@@ -145,6 +125,7 @@ function RootShell({ children }: { children: ReactNode }) {
       </head>
       <body>
         {children}
+        <Analytics />
         <Scripts />
         <SpeedInsights />
       </body>
@@ -159,6 +140,7 @@ function RootComponent() {
     <QueryClientProvider client={queryClient}>
       {/* Required: nested routes render here. Removing <Outlet /> breaks all child routes. */}
       <Outlet />
+      <Analytics />
     </QueryClientProvider>
   );
 }
