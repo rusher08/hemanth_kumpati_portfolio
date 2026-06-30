@@ -46,6 +46,7 @@ const ROLES = [
   "SOC Analyst",
   "Penetration Tester",
   "Digital Forensics Investigator",
+  "Threat Hunter",
 ];
 
 function useTypewriter(words: string[]) {
@@ -303,7 +304,8 @@ function Hero({ typed }: { typed: string }) {
             <ChevronRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
           </a>
           <a
-            href="#contact"
+            href="/Kumpati_Hemanth_Resume.pdf"
+            download="Kumpati_Hemanth_Resume.pdf"
             className="glass-panel glass-hover flex items-center gap-2 px-6 py-3 text-sm font-semibold text-foreground"
           >
             <Download className="h-4 w-4" />
@@ -329,7 +331,7 @@ function Hero({ typed }: { typed: string }) {
           >
             <Terminal className="h-5 w-5" />
           </SocialIcon>
-          <SocialIcon href="https://github.com/" label="GitHub">
+          <SocialIcon href="https://github.com/rusher08" label="GitHub">
             <Github className="h-5 w-5" />
           </SocialIcon>
           <SocialIcon href="mailto:kumpatihemanth8@gmail.com" label="Email">
@@ -509,7 +511,7 @@ const EXPERIENCES = [
   {
     role: "Wazuh SIEM Engineer",
     context: "Security Operations Lab",
-    date: "2024",
+    date: "2024 – 2025",
     bullets: [
       "Deployed Wazuh SIEM in a virtualized lab environment and onboarded multiple endpoints via Wazuh agents",
       "Configured agent policies for centralized log collection and real-time security event monitoring",
