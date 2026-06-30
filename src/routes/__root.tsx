@@ -9,6 +9,7 @@ import {
   Scripts,
 } from "@tanstack/react-router";
 import { useEffect, type ReactNode } from "react";
+import { Analytics } from "@vercel/analytics/react";
 
 import appCss from "../styles.css?url";
 import { reportLovableError } from "../lib/lovable-error-reporting";
@@ -86,7 +87,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
       { name: "twitter:title", content: "Kumpati Hemanth — Cybersecurity Analyst" },
-      { name: "twitter:description", content: "A cybersecurity portfolio showcasing Kumpati Hemanth's expertise, projects, and skills with a modern, animated UI." },
+      { name: "twitter:descripti0n", content: "A cybersecurity portfolio showcasing Kumpati Hemanth's expertise, projects, and skills with a modern, animated UI." },
       { property: "og:image", content: "https://placehold.co/1200x630/020b18/00f5ff?text=Kumpati+Hemanth+%7C+Cybersecurity+Analyst" },
       { name: "twitter:image", content: "https://placehold.co/1200x630/020b18/00f5ff?text=Kumpati+Hemanth+%7C+Cybersecurity+Analyst" },
     ],
@@ -124,6 +125,7 @@ function RootShell({ children }: { children: ReactNode }) {
       </head>
       <body>
         {children}
+        <Analytics />
         <Scripts />
       </body>
     </html>
