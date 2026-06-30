@@ -18,6 +18,8 @@ import {
   GraduationCap,
   Award,
   ChevronRight,
+  Menu,
+  X,
 } from "lucide-react";
 import { MatrixRain } from "@/components/MatrixRain";
 
