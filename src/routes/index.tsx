@@ -160,21 +160,6 @@ const SKILL_GROUPS = [
 
 const PROJECTS = [
   {
-    title: "Phishing Detection & Threat Intel Tool",
-    desc: "Python-based phishing detection for malicious URLs and ngrok phishing frameworks. Integrated VirusTotal API for threat enrichment, IP metadata extraction, HTTP redirection chain analysis, and automated PDF/CSV report generation for SOC escalation.",
-    tags: ["Python", "VirusTotal API", "Threat Intel", "SOC"],
-  },
-  {
-    title: "Digital Forensics Investigation (DFIR)",
-    desc: "Forensic analysis on E01 disk images using Autopsy and Sleuth Kit. Recovered deleted files, reconstructed user activity timelines, and produced structured investigation reports.",
-    tags: ["Autopsy", "Sleuth Kit", "E01 Imaging", "DFIR"],
-  },
-  {
-    title: "Password Security & Hash Cracking Analysis",
-    desc: "Python tool to evaluate credential strength using MD5/SHA-512. Implemented brute-force and dictionary attack simulations via John the Ripper with real-time progress tracking and cracking time estimation.",
-    tags: ["Python", "John the Ripper", "MD5", "SHA-512"],
-  },
-  {
     title: "Wazuh SIEM — Security Operations & Threat Detection",
     desc: "Deployed Wazuh SIEM with multi-endpoint agent configuration. Built custom detection rules for brute-force, privilege escalation, and suspicious processes. Investigated and documented incidents end-to-end.",
     tags: ["Wazuh", "SIEM", "Custom Rules", "Incident Response"],
@@ -189,6 +174,21 @@ const PROJECTS = [
     desc: "Deployed Snort as IDS/IPS, authored custom rules to detect port scans, SQLi, and malicious payloads. Validated rules against live PCAP traffic analysis.",
     tags: ["Snort", "IDS/IPS", "Custom Rules", "PCAP Analysis"],
   },
+  {
+    title: "Phishing Detection & Threat Intel Tool",
+    desc: "Python-based phishing detection for malicious URLs and ngrok phishing frameworks. Integrated VirusTotal API for threat enrichment, IP metadata extraction, HTTP redirection chain analysis, and automated PDF/CSV report generation for SOC escalation.",
+    tags: ["Python", "VirusTotal API", "Threat Intel", "SOC"],
+  },
+  {
+    title: "Digital Forensics Investigation (DFIR)",
+    desc: "Forensic analysis on E01 disk images using Autopsy and Sleuth Kit. Recovered deleted files, reconstructed user activity timelines, and produced structured investigation reports.",
+    tags: ["Autopsy", "Sleuth Kit", "E01 Imaging", "DFIR"],
+  },
+  {
+    title: "Password Security & Hash Cracking Analysis",
+    desc: "Python tool to evaluate credential strength using MD5/SHA-512. Implemented brute-force and dictionary attack simulations via John the Ripper with real-time progress tracking and cracking time estimation.",
+    tags: ["Python", "John the Ripper", "MD5", "SHA-512"],
+  }
 ];
 
 function Index() {
