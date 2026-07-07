@@ -107,7 +107,7 @@ function SectionTitle({ kicker, title, self_lern }: { kicker: string; title: str
       <div className="mb-12 text-center">
         <p className="font-mono text-xs uppercase tracking-[0.4em] text-cyan-glow">// {kicker}</p>
         <h2 className="mt-3 text-3xl font-bold text-foreground sm:text-4xl md:text-5xl">{title}</h2>
-        <p className="font-mono text-s lowercase ">// {self_lern}</p>
+        <p className="mt-2 font-mono text-sm lowercase ">{self_lern}</p>
         <div className="mx-auto mt-4 h-px w-24 bg-gradient-to-r from-transparent via-[#00f5ff] to-transparent" />
       </div>
     </Reveal>
@@ -606,8 +606,7 @@ function Experience() {
   return (
     <section id="experience" className="relative px-4 py-28">
       <div className="mx-auto max-w-4xl">
-        <SectionTitle kicker="experienc608e" title="Journey & Hands-On Labs" />
-        <SectionTitle self_lern="Self Security Research & Labs" />
+        <SectionTitle kicker="experienc608e" title="Journey & Hands-On Labs" self_lern="Self Security Research & Labs" />
         <div className="relative">
           {/* Pulsing vertical timeline line */}
           <div className="absolute left-[15px] top-0 hidden h-full w-px md:block">
