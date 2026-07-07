@@ -606,6 +606,7 @@ function Experience() {
     <section id="experience" className="relative px-4 py-28">
       <div className="mx-auto max-w-4xl">
         <SectionTitle kicker="experienc608e" title="Journey & Hands-On Labs" />
+        <p>Self-Directed Security Research & Labs</p>
         <div className="relative">
           {/* Pulsing vertical timeline line */}
           <div className="absolute left-[15px] top-0 hidden h-full w-px md:block">
