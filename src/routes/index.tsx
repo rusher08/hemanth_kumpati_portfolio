@@ -160,7 +160,7 @@ const SKILL_GROUPS = [
 
 const PROJECTS = [
   {
-    title: "Wazxxxuh SIEM — Security Operations & Threat Detection",
+    title: "Wazuh SIEM — Security Operations & Threat Detection",
     desc: "Deployed Wazuh SIEM with multi-endpoint agent configuration. Built custom detection rules for brute-force, privilege escalation, and suspicious processes. Investigated and documented incidents end-to-end.",
     tags: ["Wazuh", "SIEM", "Custom Rules", "Incident Response"],
   },
