@@ -160,7 +160,7 @@ const SKILL_GROUPS = [
 
 const PROJECTS = [
   {
-    title: "Waaaazuh SIEM — Security Operations & Threat Detection",
+    title: "Wazuh SIEM — Security Operations & Threat Detection",
     desc: "Deployed Wazuh SIEM with multi-endpoint agent configuration. Built custom detection rules for brute-force, privilege escalation, and suspicious processes. Investigated and documented incidents end-to-end.",
     tags: ["Wazuh", "SIEM", "Custom Rules", "Incident Response"],
   },
@@ -554,22 +554,9 @@ function Projects() {
 
 const EXPERIENCES = [
   {
-    role: "Cybersecurity Analyst",
-    context: "Self-Directed Security Research & Labs",
-    date: "2024 – 2025",
-    bullets: [
-      "Conducted vulnerability assessments and penetration testing using Nmap, Nessus, and Metasploit",
-      "Monitored network traffic with Wireshark to detect suspicious activity and data exfiltration",
-      "Investigated phishing campaigns using VirusTotal API, IP metadata analysis, and URL redirection tracing",
-      "Developed Python automation scripts for phishing detection and automated security reporting",
-      "Performed digital forensic investigations on E01 disk images using Autopsy and Sleuth Kit",
-      "Assisted in incident response including log analysis, artifact correlation, and evidence collection",
-    ],
-  },
-  {
     role: "Wazuh SIEM Engineer",
     context: "Security Operations Lab",
-    date: "2024 – 2025",
+    date: "2025 - 2026",
     bullets: [
       "Deployed Wazuh SIEM in a virtualized lab environment and onboarded multiple endpoints via Wazuh agents",
       "Configured agent policies for centralized log collection and real-time security event monitoring",
@@ -580,12 +567,25 @@ const EXPERIENCES = [
   {
     role: "Splunk Analyst",
     context: "Threat Hunting Lab",
-    date: "2024",
+    date: "2025 - 2026",
     bullets: [
       "Ingested and indexed security logs from multiple sources to build a centralized event visibility layer",
       "Designed interactive dashboards and visualizations surfacing key security metrics, anomalies, and attack patterns",
       "Wrote SPL (Search Processing Language) queries to extract actionable threat intelligence from raw log data",
       "Conducted proactive threat hunting sessions to identify indicators of compromise across the simulated environment",
+    ],
+  },
+  {
+    role: "Cybersecurity Analyst",
+    context: "Self-Directed Security Research & Labs",
+    date: "2024 – 2025",
+    bullets: [
+      "Conducted vulnerability assessments and penetration testing using Nmap, Nessus, and Metasploit",
+      "Monitored network traffic with Wireshark to detect suspicious activity and data exfiltration",
+      "Investigated phishing campaigns using VirusTotal API, IP metadata analysis, and URL redirection tracing",
+      "Developed Python automation scripts for phishing detection and automated security reporting",
+      "Performed digital forensic investigations on E01 disk images using Autopsy and Sleuth Kit",
+      "Assisted in incident response including log analysis, artifact correlation, and evidence collection",
     ],
   },
   {
@@ -605,7 +605,7 @@ function Experience() {
   return (
     <section id="experience" className="relative px-4 py-28">
       <div className="mx-auto max-w-4xl">
-        <SectionTitle kicker="experience" title="Journey & Hands-On Labs" />
+        <SectionTitle kicker="experienc608e" title="Journey & Hands-On Labs" />
         <div className="relative">
           {/* Pulsing vertical timeline line */}
           <div className="absolute left-[15px] top-0 hidden h-full w-px md:block">
