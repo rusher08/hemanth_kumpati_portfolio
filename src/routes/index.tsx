@@ -101,7 +101,15 @@ function Reveal({
   );
 }
 
-function SectionTitle({ kicker, title, self_lern }: { kicker: string; title: string; self_lern: string }) {
+function SectionTitle({
+  kicker,
+  title,
+  self_lern,
+}: {
+  kicker: string;
+  title: string;
+  self_lern: string;
+}) {
   return (
     <Reveal>
       <div className="mb-12 text-center">
@@ -189,7 +197,7 @@ const PROJECTS = [
     title: "Password Security & Hash Cracking Analysis",
     desc: "Python tool to evaluate credential strength using MD5/SHA-512. Implemented brute-force and dictionary attack simulations via John the Ripper with real-time progress tracking and cracking time estimation.",
     tags: ["Python", "John the Ripper", "MD5", "SHA-512"],
-  }
+  },
 ];
 
 function Index() {
@@ -235,23 +243,20 @@ function NavBar() {
   }, [open]);
   return (
     <header className="fixed inset-x-0 top-0 z-50 flex justify-center px-4 pt-4">
-      <nav
-        data-mobile-nav
-        className="glass-panel relative w-full max-w-5xl px-5 py-3"
-      >
+      <nav data-mobile-nav className="glass-panel relative w-full max-w-5xl px-5 py-3">
         <div className="flex items-center justify-between gap-3">
-        <a href="#home" className="font-mono text-sm font-bold text-cyan-glow">
-          {"<KH/>"}
-        </a>
-        <ul className="hidden gap-6 text-xs font-medium uppercase tracking-wider text-muted-foreground md:flex">
-          {links.map(([label, href]) => (
-            <li key={href}>
-              <a href={href} className="transition-colors hover:text-[#00f5ff]">
-                {label}
-              </a>
-            </li>
-          ))}
-        </ul>
+          <a href="#home" className="font-mono text-sm font-bold text-cyan-glow">
+            {"<KH/>"}
+          </a>
+          <ul className="hidden gap-6 text-xs font-medium uppercase tracking-wider text-muted-foreground md:flex">
+            {links.map(([label, href]) => (
+              <li key={href}>
+                <a href={href} className="transition-colors hover:text-[#00f5ff]">
+                  {label}
+                </a>
+              </li>
+            ))}
+          </ul>
           <div className="flex items-center gap-2">
             <a
               href="#contact"
@@ -606,7 +611,11 @@ function Experience() {
   return (
     <section id="experience" className="relative px-4 py-28">
       <div className="mx-auto max-w-4xl">
-        <SectionTitle kicker="experienc608e" title="Journey & Hands-On Labs" self_lern="Self Security Research & Labs" />
+        <SectionTitle
+          kicker="experienc608e"
+          title="Journey & Hands-On Labs"
+          self_lern="Self Security Research & Labs"
+        />
         <div className="relative">
           {/* Pulsing vertical timeline line */}
           <div className="absolute left-[15px] top-0 hidden h-full w-px md:block">
