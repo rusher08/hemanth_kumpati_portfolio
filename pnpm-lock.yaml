@@ -107,6 +107,9 @@ importers:
       '@vercel/analytics':
         specifier: ^2.0.1
         version: 2.0.1(react@19.2.7)
+      '@vercel/speed-insights':
+        specifier: ^2.0.0
+        version: 2.0.0(react@19.2.7)
       class-variance-authority:
         specifier: ^0.7.1
         version: 0.7.1
@@ -175,8 +178,8 @@ importers:
         specifier: ^9.32.0
         version: 9.39.4
       '@lovable.dev/vite-tanstack-config':
-        specifier: ^2.6.2
-        version: 2.6.2(@tailwindcss/vite@4.3.1(vite@8.1.0(@types/node@22.20.0)(jiti@1.21.7)))(@tanstack/react-start@1.168.26(crossws@0.4.6(srvx@0.11.17))(react-dom@19.2.7(react@19.2.7))(react@19.2.7)(rolldown@1.1.3)(vite@8.1.0(@types/node@22.20.0)(jiti@1.21.7)))(@vitejs/plugin-react@5.2.0(vite@8.1.0(@types/node@22.20.0)(jiti@1.21.7)))(nitro@3.0.260603-beta(chokidar@5.0.0)(jiti@1.21.7)(vite@8.1.0(@types/node@22.20.0)(jiti@1.21.7)))(vite-tsconfig-paths@6.1.1(typescript@5.9.3)(vite@8.1.0(@types/node@22.20.0)(jiti@1.21.7)))(vite@8.1.0(@types/node@22.20.0)(jiti@1.21.7))
+        specifier: 2.6.4
+        version: 2.6.4(@tailwindcss/vite@4.3.1(vite@8.1.0(@types/node@22.20.0)(jiti@1.21.7)))(@tanstack/react-start@1.168.26(crossws@0.4.6(srvx@0.11.17))(react-dom@19.2.7(react@19.2.7))(react@19.2.7)(rolldown@1.1.3)(vite@8.1.0(@types/node@22.20.0)(jiti@1.21.7)))(@vitejs/plugin-react@5.2.0(vite@8.1.0(@types/node@22.20.0)(jiti@1.21.7)))(nitro@3.0.260603-beta(chokidar@5.0.0)(jiti@1.21.7)(vite@8.1.0(@types/node@22.20.0)(jiti@1.21.7)))(vite-tsconfig-paths@6.1.1(typescript@5.9.3)(vite@8.1.0(@types/node@22.20.0)(jiti@1.21.7)))(vite@8.1.0(@types/node@22.20.0)(jiti@1.21.7))
       '@types/node':
         specifier: ^22.16.5
         version: 22.20.0
@@ -587,13 +590,13 @@ packages:
     peerDependencies:
       vite: '>=5.0.0 <9.0.0'
 
-  '@lovable.dev/vite-plugin-hmr-gate@1.1.0':
-    resolution: {integrity: sha512-6pFl5PW867oN0g/AV9dGg6d7U+aLwnrOuW2lC5i9LCfMmTFPDERhl+cKXQ5GOrll51xESVPmMos2964+txupCw==}
+  '@lovable.dev/vite-plugin-hmr-gate@1.1.2':
+    resolution: {integrity: sha512-m3tOTEm78rPAFq6+ELNMS10pX786mFLdRYFnU/xIra+aJSSalnueVhdeIgmictfoqBQw8GZLgmpeASOXVI6w9g==}
     peerDependencies:
       vite: '>=5.0.0 <9.0.0'
 
-  '@lovable.dev/vite-tanstack-config@2.6.2':
-    resolution: {integrity: sha512-STrsGQ3MLlqd4DYtySOm8Qt7gOEX1mT736wfTVBFV3Ln77+O5JU6gW2x4ogTpgSjRQtl3gvYw/qMgPJd55ZfLQ==}
+  '@lovable.dev/vite-tanstack-config@2.6.4':
+    resolution: {integrity: sha512-eav5blPqeu6n054y+7UtbtwIOiIexB2U7gGvHJIo2rsLyDFkJL1QL3qKnmmax1FLIProfoYXuC0lq1QczFR+dw==}
     peerDependencies:
       '@tailwindcss/vite': '>=4.0.0'
       '@tanstack/react-start': '>=1.100.0'
@@ -1733,6 +1736,32 @@ packages:
     peerDependenciesMeta:
       '@remix-run/react':
         optional: true
+      '@sveltejs/kit':
+        optional: true
+      next:
+        optional: true
+      nuxt:
+        optional: true
+      react:
+        optional: true
+      svelte:
+        optional: true
+      vue:
+        optional: true
+      vue-router:
+        optional: true
+
+  '@vercel/speed-insights@2.0.0':
+    resolution: {integrity: sha512-jwkNcrTeafWxjmWq4AHBaptSqZiJkYU5adLC9QBSqeim0GcqDMgN5Ievh8OG1rJ6W3A4l1oiP7qr9CWxGuzu3w==}
+    peerDependencies:
+      '@sveltejs/kit': ^1 || ^2
+      next: '>= 13'
+      nuxt: '>= 3'
+      react: ^18 || ^19 || ^19.0.0-rc
+      svelte: '>= 4'
+      vue: ^3
+      vue-router: ^4
+    peerDependenciesMeta:
       '@sveltejs/kit':
         optional: true
       next:
@@ -3555,14 +3584,14 @@ snapshots:
     dependencies:
       vite: 8.1.0(@types/node@22.20.0)(jiti@1.21.7)
 
-  '@lovable.dev/vite-plugin-hmr-gate@1.1.0(vite@8.1.0(@types/node@22.20.0)(jiti@1.21.7))':
+  '@lovable.dev/vite-plugin-hmr-gate@1.1.2(vite@8.1.0(@types/node@22.20.0)(jiti@1.21.7))':
     dependencies:
       vite: 8.1.0(@types/node@22.20.0)(jiti@1.21.7)
 
-  '@lovable.dev/vite-tanstack-config@2.6.2(@tailwindcss/vite@4.3.1(vite@8.1.0(@types/node@22.20.0)(jiti@1.21.7)))(@tanstack/react-start@1.168.26(crossws@0.4.6(srvx@0.11.17))(react-dom@19.2.7(react@19.2.7))(react@19.2.7)(rolldown@1.1.3)(vite@8.1.0(@types/node@22.20.0)(jiti@1.21.7)))(@vitejs/plugin-react@5.2.0(vite@8.1.0(@types/node@22.20.0)(jiti@1.21.7)))(nitro@3.0.260603-beta(chokidar@5.0.0)(jiti@1.21.7)(vite@8.1.0(@types/node@22.20.0)(jiti@1.21.7)))(vite-tsconfig-paths@6.1.1(typescript@5.9.3)(vite@8.1.0(@types/node@22.20.0)(jiti@1.21.7)))(vite@8.1.0(@types/node@22.20.0)(jiti@1.21.7))':
+  '@lovable.dev/vite-tanstack-config@2.6.4(@tailwindcss/vite@4.3.1(vite@8.1.0(@types/node@22.20.0)(jiti@1.21.7)))(@tanstack/react-start@1.168.26(crossws@0.4.6(srvx@0.11.17))(react-dom@19.2.7(react@19.2.7))(react@19.2.7)(rolldown@1.1.3)(vite@8.1.0(@types/node@22.20.0)(jiti@1.21.7)))(@vitejs/plugin-react@5.2.0(vite@8.1.0(@types/node@22.20.0)(jiti@1.21.7)))(nitro@3.0.260603-beta(chokidar@5.0.0)(jiti@1.21.7)(vite@8.1.0(@types/node@22.20.0)(jiti@1.21.7)))(vite-tsconfig-paths@6.1.1(typescript@5.9.3)(vite@8.1.0(@types/node@22.20.0)(jiti@1.21.7)))(vite@8.1.0(@types/node@22.20.0)(jiti@1.21.7))':
     dependencies:
       '@lovable.dev/vite-plugin-dev-server-bridge': 1.0.2(vite@8.1.0(@types/node@22.20.0)(jiti@1.21.7))
-      '@lovable.dev/vite-plugin-hmr-gate': 1.1.0(vite@8.1.0(@types/node@22.20.0)(jiti@1.21.7))
+      '@lovable.dev/vite-plugin-hmr-gate': 1.1.2(vite@8.1.0(@types/node@22.20.0)(jiti@1.21.7))
       '@tailwindcss/vite': 4.3.1(vite@8.1.0(@types/node@22.20.0)(jiti@1.21.7))
       '@tanstack/react-start': 1.168.26(crossws@0.4.6(srvx@0.11.17))(react-dom@19.2.7(react@19.2.7))(react@19.2.7)(rolldown@1.1.3)(vite@8.1.0(@types/node@22.20.0)(jiti@1.21.7))
       '@vitejs/plugin-react': 5.2.0(vite@8.1.0(@types/node@22.20.0)(jiti@1.21.7))
@@ -4772,6 +4801,10 @@ snapshots:
       eslint-visitor-keys: 5.0.1
 
   '@vercel/analytics@2.0.1(react@19.2.7)':
+    optionalDependencies:
+      react: 19.2.7
+
+  '@vercel/speed-insights@2.0.0(react@19.2.7)':
     optionalDependencies:
       react: 19.2.7
 
