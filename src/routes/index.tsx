@@ -12,7 +12,6 @@ import {
   Github,
   Linkedin,
   Mail,
-  Download,
   ExternalLink,
   Phone,
   GraduationCap,
@@ -368,11 +367,10 @@ function Hero({ typed }: { typed: string }) {
             <ChevronRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
           </a>
           <a
-            href="/Kumpati_Hemanth_Resume.pdf"
-            download="Kumpati_Hemanth_Resume.pdf"
+            href="#contact"
+            onClick={() => setOpen(false)}
             className="glass-panel glass-hover flex items-center gap-2 px-6 py-3 text-sm font-semibold text-foreground"
           >
-            <Download className="h-4 w-4" />
             Download Resume
           </a>
         </motion.div>
